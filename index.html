@@ -18,25 +18,51 @@
 <body>
     <div class="general">
         <header>
-            <div id="page-logo">
-                <a href="/"><img src="./food-assets/nice-chow.png" alt="page-logo"></a>
-                <p><span>CHOW</span> <span>NICE</span></p>
+            <div>
+                <a href="/" id="page-logo"><img src="./food-assets/nice-chow.png" alt="page-logo"><p>CHOW NICE</p></a>
             </div>
     
             <nav class="header-nav">
                 <ul id="header-nav-ul">
-                    <li class="header-nav-li"><a href="/">Why Chow Nice</a></li>
-                    <li class="header-nav-li"><a href="/">Services</a></li>
-                    <li class="header-nav-li"><a href="/">Menu</a></li>
-                    <li class="header-nav-li"><a href="/">Contact</a></li>
+                    <li class="header-nav-li"><a href="#description">Why Chow Nice?</a></li>
+                    <li class="header-nav-li"><a href="#services">Services</a></li>
+                    <li class="header-nav-li"><a href="#menus">Menu</a></li>
+                    <li class="header-nav-li"><a href="#guide">Find Us</a></li>
                 </ul>
             </nav>
     
-            <a href="/" class="header-btn">
+            <!-- <a href="/" class="header-btn">
                 <span><i class="ri-arrow-right-box-line"></i></span>
                 <span>Login</span>
-            </a>
+            </a> -->
+            <div id="hamburger-container">
+                <a href="#side-drawer" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
         </header>
+
+        <aside id="side-drawer">
+            <header>
+                <div id="hamburger-container">
+                    <a href="/" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#description">Why Chow Nice?</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#menus">Menu</a></li>
+                    <li><a href="#guide">Find Us</a></li>
+                </ul>
+            </nav>
+        </aside>
 
         <section id="description">
             <div class="description-content">
@@ -48,13 +74,12 @@
                 <div class="description-content-text" >
                     <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">Be The Fastest In Delivering Your <span class="food">Food</span></h1>
                     <div id="sub-divide" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="700">
-                        <p>Our job is to filling your tummy with delicious food and with fast and free delivery.</p>
+                        <div id="sub-divide-p">
+                            <p class="sub-divide-p">Our job is to filling your tummy with delicious food and with fast and free delivery.</p>
+                        </div>
+                        
                         <div class="description-content-button">
-                            <button id="get-started">Get started</button>
-                            <p>
-                                <i class="ri-play-large-fill"></i>
-                                <a href="/">Watch Video</a>
-                            </p>
+                            <button id="get-started"><a href="#guide">Get started</a></button>
                         </div>
                     </div>
                 </div> 
@@ -65,8 +90,8 @@
             </div>
         </section>
     </div>
-    <section class="services">
-        <p id="services-p">WHAT WE SERVE</p>
+    <section id="services">
+        <p id="services-p">WHAT WE OFFER</p>
         <h1>your favourite food delivery partner</h1>
         <div class="different-services" >
             <div class="service" data-aos="fade-up" data-aos-duration="2000">
@@ -76,7 +101,7 @@
                 <h3>Easy To Order</h3>
                 <p>You only need a few steps in ordering food</p>
             </div>
-            <div id="special-service" class="service" data-aos="fade-down" data-aos-duration="2000">
+            <div id="special-service" class="service" data-aos="fade-up" data-aos-duration="2000">
                 <div class="service-img">
                     <img src="./food-assets/service-2.jpg" alt="">
                 </div>
@@ -92,7 +117,7 @@
         </div>
     </section>
 
-    <section class="menus">
+    <section id="menus">
         <p id="menu-p">OUR MENU</p>
 
         <h1>menu that always make you fall in love</h1>
@@ -185,7 +210,7 @@
         </div>
     </section>
     
-    <section class="review">
+    <section id="review">
         <div class="div-img-xx" data-aos="fade-right" data-aos-duration="1200">
             <img class="img-xx" src="./food-assets/client.png" alt="Client picture">
         </div>
@@ -213,7 +238,7 @@
         </div>
     </section>
 
-    <section class="guide">
+    <section id="guide">
         <div id="guide-div">
             <div class="guide-div">
                 <p class="guide-p1" data-aos="fade-right" data-aos-duration="1200">Download App</p>
@@ -231,7 +256,7 @@
                 <div class="footer-logo-img">
                     <a href="/"><img src="./food-assets/nice-chow.png" alt="page-logo"></a>
                 </div>
-                <p class="footer-p"><span>CHOW</span><span>NICE</span></p>
+                <p class="footer-p">CHOW NICE</p>
             </div>
             <p class="socials-p">Our job is to filling youe tummy with delicious food and with fast and free delivery time.</p>
             <div class="social-icons">
@@ -273,7 +298,7 @@
     </section>
 
     <footer>
-        Copyright © 2024 Web Design Mastery. All rights reserved
+        Copyright © 2025 AustinSpeed. All rights reserved
     </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
