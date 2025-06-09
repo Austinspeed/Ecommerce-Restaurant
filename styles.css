@@ -13,14 +13,15 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: "Poppins", sans-serif;
   position: relative;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 
@@ -123,7 +124,6 @@ header img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 1.8rem 0;
 }
 
 #side-drawer:target {
@@ -311,20 +311,32 @@ header img {
 .swiper-container {
     max-width: 69.4rem;
     margin: 0 auto;
-    /* padding-right: 4rem; */
-    /* margin: 0 60px 35px; */
-    padding: 1.25rem 0.65rem;
+    padding: 0 0.65rem;
     overflow: hidden;
 }
 
-#menu-div {
+.swiper,
+.swiper-wrapper {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+.swiper-wrapper {
   display: flex;
   gap: 10px;
    margin: 60px 0;
 }
 
-#menu-div:active {
+.swiper-wrapper:active {
   cursor: grabbing;
+}
+
+.swiper-slide {
+  width: 100% !important;  /* Prevent overflow */
+ box-sizing: border-box;
 }
 
 .menu {
@@ -343,7 +355,6 @@ header img {
   position: absolute;
   bottom: 40px;
   left: 30px;
-  /* background-color: red; */
   color: #fff;
   font-weight: 500;
   display: flex;
@@ -494,6 +505,10 @@ header img {
   border: none;
 }
 
+.guide-div button:hover {
+  background-color: #f46262;
+}
+
 #guide-div img {
   width: 34.4rem;
 }
@@ -521,8 +536,6 @@ header img {
 .footer-p {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
   color: var(--text-dark);
   font-weight: 600;
   font-size: 24px;
@@ -587,18 +600,14 @@ footer {
   color: red;
 }
 
-@media (width < 1000px){
-  body {
-    width: 100%;
-  }
-
+@media (max-width: 48rem){
   header {
-    width: 95%;
+    width: 100%;
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1rem;
   }
 
   #page-logo {
@@ -607,11 +616,11 @@ footer {
 
   #page-logo p {
     white-space: nowrap;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   header img {
-    width: 3rem;
+    width: 2rem;
   }
 
   header nav {
@@ -629,24 +638,29 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0;
-  z-index: 1;
+  padding-top: 1rem;
+  z-index: 99;
 }
 
 #side-drawer header {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.5rem 1rem;
 }
 
 aside nav ul {
   list-style: none;
-  text-align: center;
+  padding: 0;
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 aside nav li {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 aside nav a {
@@ -655,18 +669,15 @@ aside nav a {
 }
 
   #description {
-    width: 95%;
+    width: 100%;
     margin: auto;
     margin-top: 1.0rem;
     display: flex;
     flex-direction: column-reverse;
-    /* gap: 1.8rem; */
-    /* justify-content: space-around; */
   }
 
   .description-image {
-    width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -677,45 +688,37 @@ aside nav a {
 }
 
 .description-content {
-  width: 100%;
   padding: 1rem;
   margin: auto;
 }
 
 .description-content-logo{
-  width: 80%;
+  width: 60%;
   margin: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem 0.5rem;
-
+  padding: 0.5rem 0;
 }
 
 .description-content-logo p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   white-space: nowrap;
 }
 
 .description-content-logo img {
-  width: 2.5rem;
-}
-
-.description-content-text {
-  width: 100%;
+  width: 1.5rem;
 }
 
 .description-content-text h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   width: 100%;
   text-align: center;
   color: var(--text-dark);
-  line-height: 3rem;
-  margin: 4rem 0 2.5rem;
+  line-height: 2rem;
+  margin: 2rem 0 1rem;
 }
 
 #sub-divide {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -723,67 +726,62 @@ aside nav a {
 }
 
 #sub-divide p{
-  width: 100%;
+  width: 90%;
+  margin: auto;
   padding: 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 #sub-divide-p {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .description-content-button {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .description-content-button button {
-  width: 50%;
+  width: 100%;
 }
 
 #get-started a {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 #services {
-  width: 95%;
-  margin: 4rem auto 3rem;
+  width: 100%;
+  margin: 2rem auto;
 }
 
 #services-p {
-  width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   letter-spacing: 0.2rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
 }
 
 #services h1 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
-  width: 100%;
+  width: 90%;
   text-align: center;
   margin: auto;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 .different-services {
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .service {
-  margin: 1.5rem 0;
-  width: 100%;
+  margin: 1rem 0;
+  width: 70%;
   background-color: var(--primary-color-light);
   padding: 1.5rem;
   border-radius: 0.5rem;
@@ -794,105 +792,131 @@ aside nav a {
 }
 
 .service img {
+  height: 7rem;
   width: 100%;
   border-radius: 20px;
 }
 
 .service h3 {
   color: var(--text-dark);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .service p {
   text-align: center;
   color: var(--text-light);
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 
 #menus {
-  width: 95%;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 #menu-p {
-  width: 100;
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 1rem;
   letter-spacing: 0.2rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 #menus h1 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
-  width: 100%;
+  width: 90%;
   padding: 0 0.5rem;
   text-align: center;
-  margin: auto;
-  line-height: 3rem;
-}
-
-#menu-div {
-  padding: 0 0 0 2rem;
-}
-
-.swiper {
-  width: 100%;
-  margin: auto;
-  padding: 0;
+  margin: 0 auto;
+  line-height: 1.5rem;
 }
 
 .swiper-container {
-    width: 100%;
-    padding: 0;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiper-wrapper {
     width: 100%;
+    max-width: 100%;
     margin: auto;
-    padding: 0;
     display: flex;
-    flex-direction: column; /* or row */
+    flex-direction: column;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    float:none;
+    left: auto;
+    right: auto;
+    padding-left: 3.5rem;
   }
 
   .swiper-slide {
-    flex: none;
-    width: 100%; /* Full width for each slide */
-    margin: auto;
+    width: 100% !important;
+    margin-bottom: 1rem;
   }
 
-  .swiper-button-next,
-.swiper-button-prev, .swiper-slide-button {
-  display: none !important;
+  .swiper-slide-button, .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+.swiper-container:first-child {
+  margin-top: 2.5rem !important;
+}
+
+.menu-image {
+  width: 90%;
+}
+
+.menu-image img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.menu-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.price-tag {
+  margin: 0;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.menu-order {
+  margin: 0;
+}
+
+.i {
+  font-size: 1rem;
 }
 
 #review {
-  margin: 3rem auto 5rem;
-  width: 95%;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column-reverse;
   padding: 0 1.5rem;
 }
 
 #review-div {
-  width: 100%;
   padding: 0;
 }
 
 .review-p1 {
-  width: 100%;
-  padding: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   letter-spacing: 0.2rem;
   color: var(--primary-color);
@@ -900,50 +924,53 @@ aside nav a {
 }
 
 #review-div h1 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-transform: capitalize;
-  width: 100%;
   text-align: center;
-  margin: auto;
-  line-height: 3rem;
+  margin: 0 auto 1.5rem;
+  line-height: 0.5rem;
 }
 
 .review-p2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--text-light);
-  margin-top: 2rem;
-  text-align:left;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .review-div-img {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .review-div-img img {
-  width: 5rem;
+  width: 3rem;
   border-radius: 100%;
 }
 
 .review-div-img h3 {
   color: var(--text-dark);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .review-div-img p {
   color: var(--text-light);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 .review-rating {
   color: rgb(200, 149, 53);
-  font-size: 1.4rem;
+  font-size: 0.8rem;
 }
 
 .rating-value {
-  font-size: 16px;
+  font-size: 0.8rem;
   color: var(--text-dark);
   font-weight: 500;
   display: flex;
@@ -951,11 +978,11 @@ aside nav a {
 }
 
 .div-img-xx {
-  margin-top: 4rem;
+  margin: 0 auto;
 }
 
 .img-xx {
-  width: 100%;
+  width: 20rem;
   padding-right: 0;
 }
 
@@ -968,9 +995,9 @@ aside nav a {
   width: 100%;
   margin: auto;
   display: flex;
-  gap: 0.7rem;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 0 1rem 2rem;
 }
 
 .guide-div {
@@ -978,34 +1005,47 @@ aside nav a {
 }
 
 .guide-p1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
 }
 
 .guide-div h1 {
-  font-size: 1.4rem;
+  width: 70%;
+  margin: auto;
+  font-size: 1.2rem;
+  text-align: center;
   color: var(--text-dark);
   text-transform: capitalize;
 }
 
 .guide-p2 {
   color: var(--text-light);
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .guide-div button {
-  margin-top: 1.4rem;
-  padding: 12px 30px;
-  font-size: 1.1rem;
+  width: 60%; 
+  margin: 1rem auto;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
   color: #fff;
   background-color: var(--primary-color);
   border-radius: 10px;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #guide-div img {
-  width: 12rem;
+  width: 20rem;
+  margin: auto;
 }
 
 .footer {
@@ -1013,6 +1053,22 @@ aside nav a {
   margin: 0 auto 5rem;
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.footer-logo-img a img {
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-p {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
 .socials {
@@ -1024,10 +1080,6 @@ aside nav a {
 }
 
 .socials-p {
-  color: var(--text-light);
-  line-height: 25px;
-  margin-top: 20px;
-  padding: 10px 0;
   display: none;
 }
 
@@ -1036,7 +1088,15 @@ aside nav a {
 }
 
 .social-icons a {
-  font-size: 2rem;
+  font-size: 1.2rem;
+}
+
+.info-details h4 {
+  font-size: 1rem;
+}
+
+.info-details li {
+  font-size: 0.8rem;
 }
 
 footer {

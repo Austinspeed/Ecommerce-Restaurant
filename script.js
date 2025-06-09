@@ -1,13 +1,20 @@
 let swiperInstance = null;
 
-function handleSwiper() {
-  const isDesktop = window.innerWidth >= 1000;
+function initOrDestroySwiper() {
+  const isMobile = window.innerWidth < 768;
 
-  if (isDesktop && !swiperInstance) {
-    // 👉 Initialize Swiper
+  if (isMobile && swiperInstance) {
+    // ❌ Destroy Swiper if it exists
+    swiperInstance.destroy(true, true);
+    swiperInstance = null;
+  }
+
+  if (!isMobile && !swiperInstance) {
+    // ✅ Initialize Swiper if not already active
     swiperInstance = new Swiper('.swiper-container', {
       loop: true,
       spaceBetween: 30,
+      slidesPerView: 3,
 
       pagination: {
         el: '.swiper-pagination',
@@ -19,16 +26,10 @@ function handleSwiper() {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-
-      slidesPerView: 3,
     });
-  } else if (!isDesktop && swiperInstance) {
-    // ❌ Destroy Swiper on mobile
-    swiperInstance.destroy(true, true);
-    swiperInstance = null;
   }
 }
 
-// Run on load and on resize
-window.addEventListener('load', handleSwiper);
-window.addEventListener('resize', handleSwiper);
+// Run once on page load and again on resize
+window.addEventListener('load', initOrDestroySwiper);
+window.addEventListener('resize', initOrDestroySwiper);
