@@ -789,11 +789,12 @@ aside nav a {
 }
 
 .service-img {
+  height: 18rem;
   margin-bottom: 1rem;
 }
 
 .service img {
-  height: 7rem;
+  height: 100%;
   width: 100%;
   border-radius: 20px;
 }
